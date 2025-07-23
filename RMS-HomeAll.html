@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESPONSIBLE MULTI STORES</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    header{
+        background-color: skyblue;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 13%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+    }
+    /* left header styles */
+    .leftHeader{
+        background-color: grey;
+        width: 40%;
+        height: 100%;
+    }
+    /* right header styles */
+    .rightHeader{
+        background-color: pink;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .rightHeader button{
+        color: black;
+        height: 40%;
+        width: 30%;
+        font-size: 50%;
+        border: none;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    /* Contact type styles */
+    .contacttype{
+        background-color: green;
+        height: 130px;
+        width: 180px;
+        position: absolute;
+        top: 14%;
+        right: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    } 
+    .contactdontshow{
+        opacity: 0;
+        background-color: green;
+        height: 130px;
+        width: 180px;
+        position: absolute;
+        top: 14%;
+        right: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .contacttype div{
+        background-color: blue;
+        height: 30px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact{
+        display: flex;
+    }
+    .b1-img{
+        height: 30px;
+        width: 30px;
+        border-top-left-radius: 10px;
+        border: none;
+        border-bottom-left-radius: 10px;
+    }
+    .b2-name{
+        height: 30px;
+        width: 70%;
+        margin-left: -.5px;
+        border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 70%;
+        font-weight: bold;
+    }
+
+    /* Main styles */
+    main{
+        position: absolute;
+        top: 15%;
+        width: 90%;
+    }
+    /* mainsearch style */
+    .mainSearch{
+        
+        
+    }
+    .searchbar{
+        height: 55px;
+        width: 60%;
+    }
+    .newListing{
+        background-color: green;
+        margin-top: 20px;
+        width: 70%;
+        height: 500px;
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+    @media (max-width: 1200px) {
+        .newListing{
+        width: 100%;
+        height: 300px;
+         
+    }
+    }
+    .searchbar input{
+        height: 100%;
+        width: 100%;
+        border-top-left-radius: 25.5px;
+        border-bottom-left-radius: 25.5px;
+        border: none;
+        outline: 1px grey solid;
+        padding-left: 30px;
+        color: rgb(65, 61, 61);
+        font-size: 75%;
+    }
+    .searchicon{
+        background-color: yellowgreen;
+        width: 50px;
+        height: 55px;
+        border: none;
+        margin-left: -1.5px;
+        border-bottom-right-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+    .search-bar-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+    }
+    /* mainContent styles */
+    .mainContent{
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 200px;
+    }
+    .storesheading{
+        height: 30px;
+        width: 90%;
+        font-weight: bold;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .storeDiv{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .storeDiv div{
+        background-color: blue;
+        width: 45%;
+        height: 300px;
+        border-radius: 20px;
+    }
+    @media (max-width:1200px){
+        .storeDiv div{
+        background-color: blue;
+        width: 45%;
+        height: 200px;
+    }
+    }
+    /* footer styles */
+    footer{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 20%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    footer div{
+        width: 30%;
+        height: 95%;
+    }
+    /* Send email styles */
+    .send-email{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center; 
+    }
+    .send-email div{
+        height: 30%;
+        width: 90%;
+    }
+    .emailheading{
+        font-size: 70%;
+        text-align: center;
+        font-weight: Bold;
+    }
+    .emailinput input{
+        height: 90%;
+        width: 95%;
+        border: none;
+        outline: 1px grey solid;
+        border-radius: 5px;
+        padding-left: 10px;
+        color: rgb(65, 61, 61);
+        font-size: 75%;
+    }
+    .emailsendbutton button{
+        width: 95%;
+        height: 90%;
+        border: none;
+        border-radius: 10px;
+    }
+    .emailinput, .emailsendbutton{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    /* Review Styles */
+    .reviews{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .reviewheading{
+        width: 90%;
+        height: 25%;
+        font-size: 70%;
+        text-align: center;
+        font-weight: Bold;
+    }
+    .reviewbox{
+        height: 50%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .reviewbox input{
+        height: 35px;
+        width: 80%;
+        border: none;
+        outline: 1px grey solid;
+        border-radius: 5px;
+        padding-left: 10px;
+        color: rgb(65, 61, 61);
+        font-size: 75%;
+    }
+    .reviewbox button{
+        height: 25px;
+        width: 70px;
+        border: none;
+        border-radius: 3px;
+    }
+    .previousreviews{
+        height: 20%;
+        width: 90%;
+        font-size: 60%;
+        text-align: center;
+    }
+    /* Socials */
+    .socials{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .socialsheading{
+        font-size: 70%;
+        text-align: center;
+        font-weight: Bold;
+    }
+    .socialplatforms{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .socials div{
+        width: 90%;
+        height: 20%;
+    }
+    .sp-imgbutton{
+        height: 30px;
+        width: 30px;
+        border: none;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .sp-name{
+        height: 30px;
+        width: 70%;
+        font-size: 60%;
+        text-align: center;
+        border: none;
+        margin-left: -1px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+</style>
+<body>
+    <header>
+        <div class="leftHeader"></div>
+        <div class="rightHeader">
+            <button onclick="window.location.href='RMS-HomeAll.html'">Home</button>
+
+            <button onclick="
+            setTimeout(() => {
+            window.location.href='#storesection'
+            }, 1000);
+            ">Stores</button>
+
+            <button class="contactbutton" onclick="
+            PopupandRemoveContact();
+            ">Contacts</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="mainSearch">
+            <div class="search-bar-icon">
+                <div class="searchbar">
+                    <input type="search">
+                </div>
+                <button class="searchicon">
+                    <img src="" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="newListing">New Listing</div>
+
+        <div class="mainContent" id="storesection">
+            <div class="storesheading"><p>Store and Service Offerings</p></div>
+            <div class="storeDiv">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="storeDiv">
+                <div></div>
+                <div></div>
+            </div>    
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="send-email">
+            <div class="emailheading">
+                <p>Email Us</p>
+            </div>
+            <div class="emailinput">
+                <input type="text">
+            </div>
+            <div class="emailsendbutton">
+                <button>Send Now</button>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <div class="reviewheading">
+                <p>Review Center</p>
+            </div>
+            <div class="reviewbox">
+                <input type="text">
+                <button>Send</button>
+            </div>
+            <div class="previousreviews">
+                <a href="blank"><p>Review Others</p></a>
+            </div>
+        </div>
+
+        <div class="socials">
+            <!-- <div class="socialplatforms">
+                <button class="sp-imgbutton">
+                    <img src="" alt="">
+                </button>
+                <button class="sp-name"><p>X (Twitter)</p></button>
+            </div> -->
+            <div class="socialsheading">Socials</div>
+
+            <div class="socialplatforms">
+                <button class="sp-imgbutton">
+                    <img src="" alt="">
+                </button>
+                <button class="sp-name"><p>Instagram</p></button>
+            </div>
+
+            <div class="socialplatforms">
+                <button class="sp-imgbutton">
+                    <img src="" alt="">
+                </button>
+                <button class="sp-name"><p>Facebook</p></button>
+            </div>
+
+            <div class="socialplatforms">
+                <button class="sp-imgbutton">
+                    <img src="" alt="">
+                </button>
+                <button class="sp-name"><p>X (Twitter)</p></button>
+            </div>
+        </div>
+    </footer>
+
+    
+        <nav class="contactdontshow js-contacttype">
+
+                   <div class="contact">
+                    <button class="b1-img">img</button>
+                    <button class="b2-name">Phone</button>
+                   </div>
+
+                   <div class="contact">
+                    <button class="b1-img">img</button>
+                    <button class="b2-name">WhatsApp</button>
+                   </div>
+
+                   <div class="contact">
+                    <button class="b1-img">img</button>
+                    <button class="b2-name">Email</button>
+                   </div>
+
+                   <div class="contact">
+                    <button class="b1-img">img</button>
+                    <button class="b2-name">Affli. Link</button>
+                   </div>
+                </nav>
+    
+
+    <script src="RMS.js"></script>
+
+    
+                     
+</body>
+</html>
