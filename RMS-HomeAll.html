@@ -326,7 +326,8 @@
         border-bottom-right-radius: 15px;
     }
 </style>
-<body>
+<body onscroll="
+OnscrollOnclick();">
     <header>
         <div class="leftHeader"></div>
         <div class="rightHeader">
@@ -336,6 +337,7 @@
             setTimeout(() => {
             window.location.href='#storesection'
             }, 1000);
+            OnscrollOnclick();
             ">Stores</button>
 
             <button class="contactbutton" onclick="
