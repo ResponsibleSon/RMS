@@ -11,3 +11,13 @@ function PopupandRemoveContact() {
         
     } 
 }
+
+// Function for removing contactPop-up onclick or onscroll
+ function OnscrollOnclick() {
+    const contHiddenElem = document.querySelector('.js-contacttype');
+
+    if (contHiddenElem.classList.contains('contacttype')) {
+        contHiddenElem.classList.remove('contacttype');
+        contHiddenElem.classList.add('contactdontshow');    
+    } 
+}
